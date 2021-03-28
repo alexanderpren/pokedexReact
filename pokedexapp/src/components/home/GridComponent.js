@@ -5,13 +5,16 @@ import { Loader } from "./Loader";
 
 export const GridComponent = ({ arrayPokemons }) => {
   const state = useSelector((state) => state.pokemon.arrayPokemons);
-  
+
   return (
     <div className="grid__container mt-5">
-      {state !== undefined ? state.map((item)=>{
+      {state !== undefined ? (
+        state.map((item) => {
           return <Card item={item} />;
-
-      })  : <Loader />}
+        })
+      ) : (
+        <Loader />
+      )}
     </div>
   );
 };
