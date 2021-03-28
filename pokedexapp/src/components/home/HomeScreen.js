@@ -1,17 +1,29 @@
-import React from 'react'
+import React,{useState} from 'react'
 import { Sidebar } from './Sidebar'
+import {Navbar} from "./Navbar"
+import {GridComponent} from "./GridComponent"
+import { Loader } from './Loader'
+
 
 
 export const HomeScreen = () => {
-    return (
-        <div className="home__main-content">
-            
-            <Sidebar />
+const[arrayPokemons]= useState([])
 
-            <main>
-                <h1>Main Content</h1>
-            </main>
-            
-        </div>
-    )
+
+
+
+    return (
+      <div className="home__main-content">
+        <Sidebar />
+
+        <main>
+          <Navbar />
+          {arrayPokemons.length !== 0 ? (
+            <GridComponent arrayPokemons={[]} />
+          ) : (
+            <Loader />
+          )}
+        </main>
+      </div>
+    );
 }

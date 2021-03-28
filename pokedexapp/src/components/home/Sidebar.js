@@ -11,14 +11,14 @@ export const Sidebar = () => {
             <span>Alex Pren</span>
             <div>
               <img
-                className="home__picture-title"
+                className="home__picture-title pointer"
                 src={logo}
                 alt="Logo pokemon"
               />
             </div>
             <div className="mt-10">
               <img
-                className="home__picture-face"
+                className="home__picture-face pointer"
                 src={face_ash}
                 alt="Logo pokemon"
               />
@@ -28,16 +28,18 @@ export const Sidebar = () => {
             </div>
             <h3>Work hard on your test</h3>
 
-            <div className="footer btn-logout">
-              <button
-                type="submit"
-                className="btn btn-primary btn-block center"
-              >
-                {" "}
-                <i class="fas fa-sign-out-alt fa-rotate-180"></i>
-                log out
-              </button>
-            </div>
+            <footer>
+              {" "}
+              <div className="home__footer">
+                <div>
+                  <button type="submit" className="btn-block btn-logout">
+                    {" "}
+                    <i class="fas fa-sign-out-alt fa-rotate-180"></i>
+                    log out
+                  </button>
+                </div>
+              </div>{" "}
+            </footer>
           </h3>
         </div>
       </aside>
