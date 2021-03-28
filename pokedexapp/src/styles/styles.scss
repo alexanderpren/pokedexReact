@@ -1,7 +1,9 @@
-html, body{
-  background: rgb(242,244,255);
-  background: linear-gradient(280deg, rgba(242,244,255,1) 0%, rgba(251,252,255,1) 35%);
-font-family:"Helvetica Neue",Arial, Helvetica, sans-serif;
-font-size: 1.3rem;
+@import './base/settings';
+@import './base/base';
 
-}
+
+//Components
+@import './components/auth';
+@import './components/buttons';
+@import './components/links';
+@import './components/home';
