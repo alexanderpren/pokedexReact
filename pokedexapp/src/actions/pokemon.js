@@ -4,6 +4,11 @@ export const getPokemons = () => ({
   type: types.get_array,
 });
 
+export const filter = (searchWord) => ({
+  type: types.filter,
+  payload: {searchWord: searchWord},
+});
+
 export const setListPokemons = (array) => ({
   type: types.set_array,
   payload: array,

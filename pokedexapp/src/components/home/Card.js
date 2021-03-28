@@ -3,9 +3,10 @@ import { Chip } from './Chip';
 
 
 export const Card = ({item}) => {
-
+console.log(item.data.detail.id);
   const url_img_default = item.data.detail.sprites.other["official-artwork"].front_default
   const id_pokemon = item.data.detail.id
+  const types = item.data.detail.types
     return (
       <div className="card__content card__shadow">
         <a href="#">
@@ -20,7 +21,7 @@ export const Card = ({item}) => {
             alt="pokemon"
           />
 
-          <Chip type={"type"} />
+          <Chip types={types} />
         </a>
       </div>
     );

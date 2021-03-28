@@ -52,20 +52,26 @@
   }
 }
 
+@media (min-width: 458px) {
+  .card__pokemon-name {
+    font-size: 2rem;
+  }
+}
+
 //POkemon ID TEXT
 .card__pokemon-id {
-  font-size: .5rem;
+  font-size: .2rem;
 }
 
 @media (min-width: 768px) {
   .card__pokemon-id {
-    font-size: 0.5rem;
+    font-size: 3rem;
   }
 }
 
 @media (min-width: 468px) {
   .card__pokemon-id {
-    font-size: 3rem;
+    font-size: 2rem;
   }
 }
 .card__pokemon-img {
