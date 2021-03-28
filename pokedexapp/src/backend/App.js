@@ -3,11 +3,10 @@ import {getErrorMessage} from "./utils"
 
 
 const getList = () => {
+ 
    
-  console.log("HOLAAAAAA");
-  /* 
     return axios
-      .get()
+      .get("https://pokeapi.co/api/v2/pokemon/?limit=50")
       .then((Response) => {
         return {
           list: Response.data,
@@ -16,8 +15,8 @@ const getList = () => {
       })
       .catch((Error) => {
         return getErrorMessage(Error);
-      }); */
-  };
+      }); 
+};
 export const app = {
     getList,
    

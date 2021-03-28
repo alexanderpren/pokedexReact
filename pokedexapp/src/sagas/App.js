@@ -1,10 +1,11 @@
-import { all, call, fork, takeEvery } from "redux-saga/effects";
+import { all, call, fork, takeEvery,put } from "redux-saga/effects";
 import { app } from "./../backend/App"
 import {types} from "../constants/types"
+import{setListPokemons} from '../actions/pokemon'
 
 /// getListPokemons
 
-const getListRequest = async (module, appName, action, detail) => {
+const getListRequest = async () => {
     return await app
       .getList()
       .then((tabulator) => tabulator)
@@ -12,20 +13,17 @@ const getListRequest = async (module, appName, action, detail) => {
   };
   
   function* getListFromRequest({ payload }) {
-    const { module, appName, action, detail } = payload;
+    
     try {
       const response = yield call(
         getListRequest,
-        module,
-        appName,
-        action,
-        detail
+       
       );
   
       if (response.message) {
         //yield put(showAlert(ALERT_ERROR, response.message));
       } else {
-       // yield put(setListSuccess(appName, response.list, action));
+        yield put(setListPokemons(response.list));
       }
     } catch (error) {
       //yield put(showAlert(ALERT_ERROR, error));
