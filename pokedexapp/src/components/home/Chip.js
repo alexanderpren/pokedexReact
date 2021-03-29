@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function ChipButton({ item, index }) {
+export default function ChipButton({ item, index, key }) {
   switch (item.type.name) {
     case "grass": {
       return (
@@ -52,7 +52,7 @@ export const Chip = ({ types }) => {
     <div style={{ display: "flex" }}>
       {types !== undefined
         ? types.map((item, index) => {
-            return <ChipButton item={item} index={index} />;
+            return <ChipButton item={item} index={index} key={index} />;
           })
         : null}
     </div>
