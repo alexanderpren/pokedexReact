@@ -10,7 +10,7 @@ export const RegisterScreen = () => {
           <input type="text" autoComplete="off" placeholder="Email" name="email"  className="auth__input" />
           <input type="password" autoComplete="off" placeholder="Password" name="password" className="auth__input" />
           <input type="password" autoComplete="off" placeholder="Confirm Password" name="password2" className="auth__input" />
-          <button type="submit"className="btn btn-primary btn-block mb-5">Register</button>
+          <button type="submit" className="btn btn-primary btn-block mb-5">Register</button>
 
           <hr />
   

@@ -3,14 +3,14 @@ import { Chip } from "./Chip";
 import { getDetail } from "../../actions/pokemon";
 import { useDispatch } from "react-redux";
 
-export const Card = ({ key, state }) => {
+export const Card = ({ index, state }) => {
   const dispatch = useDispatch();
 
   const handleClick = (e) => {
     dispatch(getDetail(parseInt(e.target.id)));
   };
 
-  let current_index = parseInt(key)
+  let current_index = parseInt(index);
 
   const pokemonName = state[current_index].name;
   const url_img_default =
@@ -35,7 +35,7 @@ export const Card = ({ key, state }) => {
           alt="pokemon"
         />
 
-        <Chip types={types} key={key}/>
+        <Chip key={current_index} types={types} />
       </div>
     </div>
   );
