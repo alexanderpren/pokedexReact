@@ -9,6 +9,11 @@ export const filter = (searchWord) => ({
   payload: {searchWord: searchWord},
 });
 
+export const getDetail = (id) => ({
+  type: types.detail,
+  payload: {id: id},
+});
+
 export const setListPokemons = (array) => ({
   type: types.set_array,
   payload: array,

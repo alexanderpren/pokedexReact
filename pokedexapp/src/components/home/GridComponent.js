@@ -11,8 +11,8 @@ export const GridComponent = ({ arrayPokemons, filter }) => {
   return (
     <div className="grid__container mt-5">
       {state !== undefined ? (
-        state.map((item) => {
-          return <Card item={item} />;
+        state.map((item, index) => {
+          return <Card item={item} index={index} />;
         })
       ) : (
         <Loader />

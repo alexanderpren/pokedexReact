@@ -1,6 +1,8 @@
 .topnav__content {
     overflow: hidden;
     background-color: $secondary;
+    display: flex;
+    justify-content: space-between;
   }
 
   .topnav__content .search-container {

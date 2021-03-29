@@ -26,7 +26,7 @@ const getDetailPokemon = async (item) => {
 function* getListFromRequest({ payload }) {
   try {
     const response = yield call(getListRequest);
-    console.log(response.list);
+    
 
     if (response.message) {
       yield put(showAlert("ALERT_ERROR", response.message));

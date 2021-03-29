@@ -2,6 +2,8 @@ import { types } from "../constants/types";
 const initialState = [
   {
     arrayPokemons: [],
+    detail:null,
+    open: false
   },
 ];
 
@@ -27,6 +29,20 @@ export const PokemonReducer = (state = initialState, action) => {
         arrayPokemons: newArray,
       };
     }
+    case types.detail: {
+      let id_to_find = action.payload.id
+
+      let detail = state.arrayPokemons[id_to_find]
+
+ 
+     
+ 
+       return {
+         ...state,
+         open:true,
+         detail:detail
+       };
+     }
     default:
       return state;
   }

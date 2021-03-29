@@ -4,7 +4,18 @@ import {useDispatch} from 'react-redux'
 
 
 
-export const Navbar = () => { 
+export const Navbar = ({open}) => { 
+
+ 
+  
+  const  BtnBack = () => {
+    return (
+      <div className="btn btn-back">
+        <i class="fas fa-arrow-left"></i>
+      </div>
+    )
+  }
+  
 
   const [word,setWord] = useState(undefined)
   const dispatch = useDispatch();
@@ -29,19 +40,19 @@ export const Navbar = () => {
   return (
     <>
       <div className="topnav__content mt-10">
+        <div>{open && <BtnBack />}</div>
         <div className="search-container">
-          <form action="">
-            <input
-              type="text"
-              placeholder="Search"
-              name="search"
-              value={word}
-              onChange={handleChange}
-            ></input>
-            <button type="submit">
-              <i class="fas fa-search"></i>
-            </button>
-          </form>
+          {" "}
+          <input
+            type="text"
+            placeholder="Search"
+            name="search"
+            value={word}
+            onChange={handleChange}
+          ></input>
+          <button type="submit">
+            <i class="fas fa-search"></i>
+          </button>
         </div>
       </div>
     </>
