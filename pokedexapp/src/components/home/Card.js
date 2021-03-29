@@ -10,6 +10,8 @@ export const Card = ({ key, state }) => {
     dispatch(getDetail(parseInt(e.target.id)));
   };
 
+  let current_index = parseInt(key)
+
   const pokemonName = state[current_index].name;
   const url_img_default =
     state[current_index].data.detail.sprites.other["official-artwork"]
@@ -27,7 +29,7 @@ export const Card = ({ key, state }) => {
 
         <img
           key={id_pokemon}
-          id={index}
+          id={current_index}
           className="card__pokemon-img"
           src={url_img_default}
           alt="pokemon"
