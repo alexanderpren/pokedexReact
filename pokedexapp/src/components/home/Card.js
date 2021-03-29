@@ -12,14 +12,15 @@ export const Card = ({ index, state }) => {
 
   let current_index = parseInt(index);
 
-  const pokemonName = state[current_index].name;
+   const pokemonName = state[current_index].name;
   const url_img_default =
     state[current_index].data.detail.sprites.other["official-artwork"]
       .front_default;
   const id_pokemon = state[current_index].data.detail.id;
-  const types = state[current_index].data.detail.types;
+  const types = state[current_index].data.detail.types; */
 
   return (
+    
     <div className="card__content card__shadow">
       <div style={{ cursor: "pointer" }} onClick={(e) => handleClick(e)}>
         <div className="card__text">
@@ -37,6 +38,6 @@ export const Card = ({ index, state }) => {
 
         <Chip key={current_index} types={types} />
       </div>
-    </div>
+    </div> 
   );
 };

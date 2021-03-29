@@ -2,15 +2,14 @@ import React,{useState,useEffect} from 'react'
 import {back,filter} from "../../actions/pokemon"
 import {useDispatch} from 'react-redux'
 
-export const Navbar = ({open}) => { 
+export const Navbar = ({open,reportChange}) => { 
+  const [word,setWord] = useState(undefined)
   const dispatch = useDispatch();
   
   const handleClose =() => {
     dispatch(back());
   }
 
- 
-  
   const  BtnBack = ({handleClose}) => {
     return (
       <button type ="submit" className="btn btn-back" onClick={handleClose}>
@@ -20,21 +19,17 @@ export const Navbar = ({open}) => {
   }
   
 
-  const [word,setWord] = useState(undefined)
- 
-
   useEffect(() => {
     if (word !== undefined){
       dispatch(filter(word));
     }
-   
   }, [dispatch,word]);
   
 
 
   const handleChange = (e) => {
     e.preventDefault();
-    setWord(e.target.value);   
+    reportChange(e.target.value)
   
   }
 
