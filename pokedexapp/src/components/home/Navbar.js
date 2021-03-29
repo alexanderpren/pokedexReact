@@ -2,13 +2,10 @@ import React,{useState,useEffect} from 'react'
 import {back,filter} from "../../actions/pokemon"
 import {useDispatch} from 'react-redux'
 
-
-
 export const Navbar = ({open}) => { 
   const dispatch = useDispatch();
   
   const handleClose =() => {
-
     dispatch(back());
   }
 
@@ -27,7 +24,7 @@ export const Navbar = ({open}) => {
  
 
   useEffect(() => {
-    if (word != undefined){
+    if (word !== undefined){
       dispatch(filter(word));
     }
    
@@ -37,9 +34,7 @@ export const Navbar = ({open}) => {
 
   const handleChange = (e) => {
     e.preventDefault();
-    setWord(e.target.value);
-
-    
+    setWord(e.target.value);   
   
   }
 
