@@ -20,6 +20,10 @@ export const setListPokemons = (array) => ({
 });
  
 
+export const back = () => ({
+  type: types.back,
+});
+
 export const showAlert= (type, message) => {
   /* TODO: Finalizar la parte de Alertas en reducer y aqui en esta accion para todos. */
 console.log(type, message);

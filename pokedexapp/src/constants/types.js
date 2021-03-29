@@ -5,4 +5,5 @@ export const types = {
   get_array: "[GET_ARRAY] getPokemons",
   filter: "[FILTER] Filter",
   detail: "[DETAIL] Detail",
+  back: "[BACK] Back",
 };

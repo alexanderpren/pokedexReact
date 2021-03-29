@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Chip } from "./Chip";
-import { useSelector } from "react-redux";
 import { getDetail } from "../../actions/pokemon";
 import { useDispatch } from "react-redux";
 

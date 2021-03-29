@@ -1,24 +1,30 @@
 import React,{useState,useEffect} from 'react'
-import {filter} from "../../actions/pokemon"
+import {back,filter} from "../../actions/pokemon"
 import {useDispatch} from 'react-redux'
 
 
 
 export const Navbar = ({open}) => { 
+  const dispatch = useDispatch();
+  
+  const handleClose =() => {
+
+    dispatch(back());
+  }
 
  
   
-  const  BtnBack = () => {
+  const  BtnBack = ({handleClose}) => {
     return (
-      <div className="btn btn-back">
+      <button type ="submit" className="btn btn-back" onClick={handleClose}>
         <i class="fas fa-arrow-left"></i>
-      </div>
+      </button>
     )
   }
   
 
   const [word,setWord] = useState(undefined)
-  const dispatch = useDispatch();
+ 
 
   useEffect(() => {
     if (word != undefined){
@@ -40,7 +46,7 @@ export const Navbar = ({open}) => {
   return (
     <>
       <div className="topnav__content mt-10">
-        <div>{open && <BtnBack />}</div>
+        <div>{open && <BtnBack handleClose={handleClose} />}</div>
         <div className="search-container">
           {" "}
           <input

@@ -31,17 +31,20 @@ export const PokemonReducer = (state = initialState, action) => {
     }
     case types.detail: {
       let id_to_find = action.payload.id
-
       let detail = state.arrayPokemons[id_to_find]
-
- 
-     
- 
        return {
          ...state,
          open:true,
          detail:detail
        };
+     }
+     case types.back:{
+      return {
+        ...state,
+        open:false,
+        detail:null
+      };
+
      }
     default:
       return state;
