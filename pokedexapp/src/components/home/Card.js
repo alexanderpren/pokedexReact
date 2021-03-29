@@ -17,7 +17,7 @@ export const Card = ({ index, state }) => {
     state[current_index].data.detail.sprites.other["official-artwork"]
       .front_default;
   const id_pokemon = state[current_index].data.detail.id;
-  const types = state[current_index].data.detail.types; */
+  const types = state[current_index].data.detail.types; 
 
   return (
     
